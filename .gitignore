@@ -23,3 +23,11 @@ dist-ssr
 *.sln
 *.sw?
 .env
+
+# hardhat
+artifacts
+cache
+deployments
+coverage
+coverage.json
+typechain
