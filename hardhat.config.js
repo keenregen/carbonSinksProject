@@ -4,14 +4,14 @@ require('dotenv').config()
 module.exports = {
   defaultNetwork: "localhost",
   networks: {
-    optimism_test: {
-    },
-    base_test: {
-    },
-    zora_test: {
-    },
-    mode_test: {
-    },
+    // optimism_test: {
+    // },
+    // base_test: {
+    // },
+    // zora_test: {
+    // },
+    // mode_test: {
+    // },
     localhost: {
       url: "http://127.0.0.1:8545"
     },
