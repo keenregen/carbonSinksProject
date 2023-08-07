@@ -1,2 +1,0 @@
-# Carbon Sinks NFTs Project
-
