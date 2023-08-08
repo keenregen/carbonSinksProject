@@ -154,7 +154,7 @@ export default function SaleInfo({ nft }: Props) {
                             onSuccess={(txResult) => {
                                 router.push(`/token/${NFT_COLLECTION_ADDRESS}/${nft.metadata.id}`);
                             }}
-                        >Create Direct Listing</Web3Button>
+                        >List for Sale Directly</Web3Button>
                     </Stack>
                 </TabPanel>
                 <TabPanel>
@@ -201,7 +201,7 @@ export default function SaleInfo({ nft }: Props) {
                             onSuccess={(txResult) => {
                                 router.push(`/token/${NFT_COLLECTION_ADDRESS}/${nft.metadata.id}`);
                             }}
-                        >Create Auction Listing</Web3Button>
+                        >List for Sale via Auction</Web3Button>
                     </Stack>
                 </TabPanel>
             </TabPanels>
