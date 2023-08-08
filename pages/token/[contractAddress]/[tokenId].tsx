@@ -270,12 +270,14 @@ export const getStaticProps: GetStaticProps = async (context) => {
       nft,
       contractMetadata: contractMetadata || null,
     },
-    revalidate: 1, // https://nextjs.org/docs/basic-features/data-fetching/incremental-static-regeneration
+    revalidate: 1,
   };
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const sdk = new ThirdwebSDK("optimism-goerli");
+  const sdk = new ThirdwebSDK(OptimismGoerli, {
+    supportedChains: [BaseGoerli as any, ZoraTestnet as any], // The chains you want to support
+  },);
 
   const contract = await sdk.getContract(NFT_COLLECTION_ADDRESS);
 
