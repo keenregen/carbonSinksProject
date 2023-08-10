@@ -1,19 +1,60 @@
-import NextLink from 'next/link'
-import type { NextPage } from "next";
-import { Button, Container, Flex, Heading, Image, Stack } from '@chakra-ui/react';
+import { ConnectWallet, useAddress, useContract, useContractRead } from "@thirdweb-dev/react";
+import styles from "../styles/Home.module.css";
+import { NextPage } from "next";
+import { CONTRACT_ADDRESS } from "../const/adresses";
+import Quiz from "../components/quiz";
+import NftClaim from "../components/nft-claim";
 
 const Home: NextPage = () => {
+  const address = useAddress();
+
+  const {
+    contract
+  } = useContract(CONTRACT_ADDRESS);
+
+  const {
+    data: hasAnswered,
+    isLoading: isHasAnsweredLoading
+  } = useContractRead(
+    contract,
+    "hasAnswered",
+    [address]
+  );
+
+  const {
+    data: isCorrect,
+    isLoading: isIsCorrectLoading
+  } = useContractRead(
+    contract,
+    "isCorrect",
+    [address]
+  );
+
   return (
-    <Container maxW={"1200px"}>
-      <Flex h={"80vh"} alignItems={"center"} justifyContent={"center"}>
-        <Stack spacing={4} align={"center"}>
-          <Heading>Marketplace</Heading>
-          <Button
-             as={NextLink} href='/buy'
-          >Shop NFTs</Button>
-        </Stack>
-      </Flex>
-    </Container>
+    <div className={styles.container}>
+      <ConnectWallet />
+      {!isHasAnsweredLoading ? (
+        !hasAnswered ? (
+          <>
+            <h1 style={{marginBottom:"0"}}>Question</h1>
+            <p style={{marginBottom:"0"}}>Answer correctly to claim the NFT prize.</p>
+            <Quiz />
+          </>
+        ) : (
+          !isIsCorrectLoading &&
+            isCorrect ? (
+              <NftClaim />
+            ) : (
+              <div className={styles.card}>
+                <h1>Maybe next time!</h1>
+                <p style={{marginBottom:"5"}}>You have answered incorrectly.</p>
+              </div>
+            )
+        )
+      ) : (
+        <p>Checking for an available quiz. Be patient.</p>
+      )}
+    </div>
   );
 };
 
