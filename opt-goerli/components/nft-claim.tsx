@@ -1,4 +1,4 @@
-import { Web3Button, useAddress, useContract } from "@thirdweb-dev/react";
+import { Web3Button, useAddress, useContract, useContractRead } from "@thirdweb-dev/react";
 import { NFT_CONTRACT_ADDRESS } from "../const/adresses";
 import styles from "../styles/Home.module.css";
 
@@ -8,7 +8,8 @@ export default function NftClaim() {
     const {
         contract: prizeContract
     } = useContract(NFT_CONTRACT_ADDRESS);
-    
+
+    const { data: nftIdToBeMinted, isLoading: nftIdToBeMintedLoading } = useContractRead(prizeContract, "totalMinted");
     const mintWithSignature = async () => {
         try {
             const signedPayloadReq = await fetch(`/api/server`, {
@@ -43,6 +44,10 @@ export default function NftClaim() {
                 action={() => mintWithSignature()}
             >Claim NFT Prize</Web3Button>
             <p style={{marginTop:"5px"}}>NFT Contract Address: {NFT_CONTRACT_ADDRESS}</p>
-        </div>
+            {
+            !nftIdToBeMintedLoading &&
+            <p style={{marginTop:"5px"}}>Next Token Id To Be Minted: {nftIdToBeMinted.toString()} </p>
+            }
+            </div>
     );
 };

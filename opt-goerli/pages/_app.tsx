@@ -1,6 +1,7 @@
 import type { AppProps } from "next/app";
 import { ThirdwebProvider } from "@thirdweb-dev/react";
 import "../styles/globals.css";
+import { BaseGoerli, ModeTestnet, OptimismGoerli, ZoraTestnet } from "@thirdweb-dev/chains";
 
 // This is the chain your dApp will work on.
 // Change this to the chain your app is built for.
@@ -12,6 +13,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ThirdwebProvider
       clientId={process.env.NEXT_PUBLIC_TEMPLATE_CLIENT_ID}
       activeChain={activeChain}
+      supportedChains={[BaseGoerli, ModeTestnet, OptimismGoerli, ZoraTestnet ]}
     >
       <Component {...pageProps} />
     </ThirdwebProvider>

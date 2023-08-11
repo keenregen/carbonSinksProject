@@ -1,12 +1,34 @@
 import { ThirdwebSDK } from "@thirdweb-dev/sdk";
 import { NextApiRequest, NextApiResponse } from "next";
 import { CONTRACT_ADDRESS, NFT_CONTRACT_ADDRESS } from "../../const/adresses";
+import Cors from "cors";
+
+// Initializing the cors middleware
+const cors = Cors({
+  methods: ['GET', 'POST'],
+});
+
+// Helper method to wait for a middleware to execute before continuing
+// And to throw an error when an error happens in a middleware
+function runMiddleware(req: any, res: any, fn: any) {
+  return new Promise((resolve, reject) => {
+    fn(req, res, (result: any) => {
+      if (result instanceof Error) {
+        return reject(result);
+      }
+      return resolve(result);
+    });
+  });
+}
 
 export default async function server(
     req: NextApiRequest,
     res: NextApiResponse
 ){
     try {
+
+        await runMiddleware(req, res, cors);
+        
         const { claimerAddress } = JSON.parse(req.body);
 
         if(!process.env.KEY_KEY) {
