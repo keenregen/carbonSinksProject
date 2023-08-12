@@ -10,9 +10,11 @@ import { CONTRACT_ADDRESS } from "../const/adresses";
 import Quiz from "../components/quiz";
 import NftClaim from "../components/nft-claim";
 import optGoerliLogo from "../../public/images/opt.png";
-import Image from 'next/image';
+import Image from "next/image";
+import { useRouter } from "next/router";
 
 const Home: NextPage = () => {
+  const router = useRouter();
   const address = useAddress();
 
   const { contract } = useContract(CONTRACT_ADDRESS);
@@ -30,12 +32,15 @@ const Home: NextPage = () => {
     <div className={styles.container}>
       <ConnectWallet />
       <br></br>
-      <Image src={optGoerliLogo} alt="Chain Logo" width={100} height={100}/>
+      <Image src={optGoerliLogo} alt="Chain Logo" width={100} height={100} />
       <br></br>
       {!isHasAnsweredLoading ? (
         !hasAnswered ? (
           <>
-            <p style={{ marginBottom: "0", textAlign: "center"  }}>
+            <p
+              className="font-bold"
+              style={{ marginBottom: "0", textAlign: "center" }}
+            >
               Solve the challenge correctly and claim the NFT prize
             </p>
             <Quiz />
@@ -44,15 +49,35 @@ const Home: NextPage = () => {
           <NftClaim />
         ) : (
           <div className={styles.card}>
-            <h1>Maybe next time!</h1>
-            <p style={{ marginBottom: "5", textAlign: "center" }}>You have solved the latest challenge incorrectly.</p>
+            <h1
+              className="font-bold"
+              style={{
+                fontSize: "33px",
+                marginBottom: "0",
+                textAlign: "center",
+              }}
+            >
+              Maybe next time!
+            </h1>
+            <p
+              className="font-bold"
+              style={{ marginBottom: "5", textAlign: "center" }}
+            >
+              You have solved the latest challenge incorrectly.
+            </p>
           </div>
         )
       ) : (
-        <p style={{ textAlign: "center" }}>Checking for an available Carbon Sinks challenge <br /> on Optimism Goerli chain. Be patient.</p>
+        <p className="font-bold" style={{ textAlign: "center" }}>
+          Checking for an available Carbon Sinks challenge <br /> on Optimism
+          Goerli chain. Be patient.
+        </p>
       )}
 
-      <button className="mt-5 px-5 py-2 font-bold text-black bg-white rounded-lg hover:bg-green-700">
+      <button
+        className="mt-5 px-5 py-2 font-bold text-black bg-white rounded-lg hover:bg-green-500"
+        onClick={() => router.push("https://carbon-sinks-home.vercel.app/")}
+      >
         Back To Homepage
       </button>
     </div>

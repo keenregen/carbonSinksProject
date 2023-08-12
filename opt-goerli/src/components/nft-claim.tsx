@@ -37,8 +37,13 @@ export default function NftClaim() {
     };
     return (
         <div className={styles.card}>
-            <h1>Congratulations!</h1>
-            <p style={{marginBottom:"5px"}}>You have solved the latest challenge correctly.</p>
+            <h1               className="font-bold"
+              style={{
+                fontSize: "33px",
+                marginBottom: "0",
+                textAlign: "center",
+              }}>Congratulations!</h1>
+            <p className="font-bold" style={{marginBottom:"5px", textAlign: "center"}}>You have solved the latest challenge correctly.</p>
             <Web3Button
                 contractAddress={NFT_CONTRACT_ADDRESS}
                 action={() => mintWithSignature()}
