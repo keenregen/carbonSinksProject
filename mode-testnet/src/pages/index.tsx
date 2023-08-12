@@ -69,8 +69,8 @@ const Home: NextPage = () => {
         )
       ) : (
         <p className="font-bold" style={{ textAlign: "center" }}>
-          Checking for an available Carbon Sinks challenge <br /> on Optimism
-          Goerli chain. Be patient.
+          Checking for an available Carbon Sinks challenge <br /> on Mode
+          Sepolia chain. Be patient.
         </p>
       )}
 

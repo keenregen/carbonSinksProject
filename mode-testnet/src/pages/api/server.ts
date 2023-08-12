@@ -2,6 +2,7 @@ import { ThirdwebSDK } from "@thirdweb-dev/sdk";
 import { NextApiRequest, NextApiResponse } from "next";
 import { CONTRACT_ADDRESS, NFT_CONTRACT_ADDRESS } from "../../const/adresses";
 import Cors from "cors";
+import { BaseGoerli, ModeTestnet, OptimismGoerli, ZoraTestnet } from "@thirdweb-dev/chains";
 
 // Initializing the cors middleware
 const cors = Cors({
@@ -37,7 +38,7 @@ export default async function server(
 
         const sdk = ThirdwebSDK.fromPrivateKey(
             process.env.KEY_KEY, 
-            "optimism-goerli"
+            ModeTestnet
         );
 
         const prizeContract = await sdk.getContract(

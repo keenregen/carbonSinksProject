@@ -27,13 +27,13 @@ export default function Home() {
       </p>
       <button
         className="mt-3 px-9 py-5 font-bold text-white bg-blue-600 rounded-lg hover:bg-blue-700"
-        onClick={() => router.push("")}
+        onClick={() => router.push("https://carbon-sinks-a.vercel.app/")}
       >
         Base Goerli Challenge Page
       </button>
       <button
         className="mt-5 px-7 py-5 font-bold text-white bg-yellow-500 rounded-lg hover:bg-yellow-600"
-        onClick={() => router.push("")}
+        onClick={() => router.push("https://carbon-sinks-b.vercel.app/")}
       >
         Mode Sepolia Challenge Page
       </button>
@@ -45,7 +45,7 @@ export default function Home() {
       </button>
       <button
         className="mt-5 px-9 py-5 font-bold text-white bg-blue-800 rounded-lg hover:bg-blue-900"
-        onClick={() => router.push("")}
+        onClick={() => router.push("https://carbon-sinks-d.vercel.app/")}
       >
         Zora Goerli Challenge Page
       </button>

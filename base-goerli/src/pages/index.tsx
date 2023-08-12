@@ -9,7 +9,7 @@ import { NextPage } from "next";
 import { CONTRACT_ADDRESS } from "../const/adresses";
 import Quiz from "../components/quiz";
 import NftClaim from "../components/nft-claim";
-import optGoerliLogo from "../../public/images/opt.png";
+import baseGoerliLogo from "../../public/images/base.png";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
@@ -32,7 +32,7 @@ const Home: NextPage = () => {
     <div className={styles.container}>
       <ConnectWallet />
       <br></br>
-      <Image src={optGoerliLogo} alt="Chain Logo" width={100} height={100} />
+      <Image src={baseGoerliLogo} alt="Chain Logo" width={100} height={100} />
       <br></br>
       {!isHasAnsweredLoading ? (
         !hasAnswered ? (
@@ -69,7 +69,7 @@ const Home: NextPage = () => {
         )
       ) : (
         <p className="font-bold" style={{ textAlign: "center" }}>
-          Checking for an available Carbon Sinks challenge <br /> on Optimism
+          Checking for an available Carbon Sinks challenge <br /> on Base
           Goerli chain. Be patient.
         </p>
       )}
