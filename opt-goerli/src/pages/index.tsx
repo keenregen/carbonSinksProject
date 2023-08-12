@@ -9,7 +9,7 @@ import { NextPage } from "next";
 import { CONTRACT_ADDRESS } from "../const/adresses";
 import Quiz from "../components/quiz";
 import NftClaim from "../components/nft-claim";
-import optGoerliLogo from "../public/images/opt.png";
+import optGoerliLogo from "../../public/images/opt.png";
 import Image from 'next/image';
 
 const Home: NextPage = () => {
