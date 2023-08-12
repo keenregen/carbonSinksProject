@@ -55,7 +55,7 @@ export default async function server(
         );
 
         if(!isCorrect) {
-            res.status(400).json({error: "You did not answer correctly"});
+            res.status(400).json({error: "You did not solve the challenge correctly"});
             return;
         };
 

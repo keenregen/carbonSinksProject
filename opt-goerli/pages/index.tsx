@@ -9,6 +9,8 @@ import { NextPage } from "next";
 import { CONTRACT_ADDRESS } from "../const/adresses";
 import Quiz from "../components/quiz";
 import NftClaim from "../components/nft-claim";
+import optGoerliLogo from "../public/images/opt.png";
+import Image from 'next/image';
 
 const Home: NextPage = () => {
   const address = useAddress();
@@ -28,12 +30,13 @@ const Home: NextPage = () => {
     <div className={styles.container}>
       <ConnectWallet />
       <br></br>
+      <Image src={optGoerliLogo} alt="Chain Logo" width={100} height={100}/>
+      <br></br>
       {!isHasAnsweredLoading ? (
         !hasAnswered ? (
           <>
-            <h1 style={{ marginBottom: "0" }}>Question</h1>
-            <p style={{ marginBottom: "0" }}>
-              Answer correctly to claim the NFT prize.
+            <p style={{ marginBottom: "0", textAlign: "center"  }}>
+              Solve the challenge correctly and claim the NFT prize
             </p>
             <Quiz />
           </>
@@ -42,14 +45,14 @@ const Home: NextPage = () => {
         ) : (
           <div className={styles.card}>
             <h1>Maybe next time!</h1>
-            <p style={{ marginBottom: "5" }}>You have answered incorrectly.</p>
+            <p style={{ marginBottom: "5", textAlign: "center" }}>You have solved the latest challenge incorrectly.</p>
           </div>
         )
       ) : (
-        <p>Checking for an available quiz. Be patient.</p>
+        <p style={{ textAlign: "center" }}>Checking for an available Carbon Sinks challenge <br /> on Optimism Goerli chain. Be patient.</p>
       )}
 
-      <button className="mt-3 px-5 py-2 font-bold text-white bg-green-600 rounded-lg hover:bg-green-700">
+      <button className="mt-5 px-5 py-2 font-bold text-black bg-white rounded-lg hover:bg-green-700">
         Back To Homepage
       </button>
     </div>

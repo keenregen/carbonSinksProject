@@ -38,7 +38,7 @@ export default function NftClaim() {
     return (
         <div className={styles.card}>
             <h1>Congratulations!</h1>
-            <p style={{marginBottom:"5px"}}>You have answered correctly.</p>
+            <p style={{marginBottom:"5px"}}>You have solved the latest challenge correctly.</p>
             <Web3Button
                 contractAddress={NFT_CONTRACT_ADDRESS}
                 action={() => mintWithSignature()}
@@ -46,7 +46,7 @@ export default function NftClaim() {
             <p style={{marginTop:"5px"}}>NFT Contract Address: {NFT_CONTRACT_ADDRESS}</p>
             {
             !nftIdToBeMintedLoading &&
-            <p style={{marginTop:"5px"}}>Next Token Id To Be Minted: {nftIdToBeMinted.toString()} </p>
+            <p style={{marginTop:"5px"}}>Next Token Id To Be Claimed: {nftIdToBeMinted.toString()} </p>
             }
             </div>
     );
