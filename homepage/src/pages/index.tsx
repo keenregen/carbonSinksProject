@@ -16,8 +16,15 @@ export default function Home() {
         className="font-bold"
         style={{ fontSize: "33px", marginBottom: "0", textAlign: "center" }}
       >
-        Carbon Sinks Challenges
+        Carbon Sinks Project
       </h1>
+      <p
+        className="font-bold"
+        style={{ marginBottom: "0", textAlign: "center" }}
+      >
+        An engaging and educative, daily-challenge-based, <br /> multichain web
+        3 project that promotes environmental responsibility
+      </p>
       <button
         className="mt-3 px-9 py-5 font-bold text-white bg-blue-600 rounded-lg hover:bg-blue-700"
         onClick={() => router.push("")}
@@ -49,7 +56,6 @@ export default function Home() {
       >
         Bridge Your NFT Prizes
       </button>
-      <br />
       <br />
     </div>
   );
