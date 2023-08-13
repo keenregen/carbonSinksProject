@@ -23,7 +23,7 @@ export default function Home() {
         style={{ marginBottom: "0", textAlign: "center" }}
       >
         An engaging and educative,<br />daily-challenge-based,<br /> multichain web
-        3 project,<br />promoting environmental responsibility
+        3 project,<br />giving meaningful NFTs as prizes,<br />promoting environmental responsibility
       </p>
       <button
         className="mt-3 px-9 py-5 font-bold text-white bg-blue-600 rounded-lg hover:bg-blue-700"
@@ -52,7 +52,7 @@ export default function Home() {
       <br />
       <button
         className="mt-5 px-9 py-3 font-bold text-white bg-purple-800 rounded-lg hover:bg-purple-900"
-        onClick={() => router.push("")}
+        onClick={() => router.push("https://carbon-sinks-bridge.vercel.app/")}
       >
         Bridge Your NFT Prizes
       </button>
