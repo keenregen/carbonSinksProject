@@ -1,4 +1,4 @@
-<div align="justify">
+<div align="center">
 
 # Carbon Sinks Web Project
 
