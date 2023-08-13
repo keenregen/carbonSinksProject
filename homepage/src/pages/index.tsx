@@ -22,7 +22,7 @@ export default function Home() {
         className="font-bold"
         style={{ marginBottom: "0", textAlign: "center" }}
       >
-        An engaging and educative,<br />daily-challenge-based,<br /> Superchain web
+        An engaging and educative,<br />daily-challenge-based,<br /> Superchain Web
         3 project,<br />giving meaningful NFTs as prizes,<br />promoting environmental responsibility
       </p>
       <button
