@@ -41,7 +41,9 @@ const Home: NextPage = () => {
               className="font-bold"
               style={{ marginBottom: "0", textAlign: "center" }}
             >
-              Solve the challenge correctly and claim the NFT prize
+              Solve the challenge correctly
+              <br />
+              and claim the NFT prize
             </p>
             <Quiz />
           </>
@@ -69,8 +71,12 @@ const Home: NextPage = () => {
         )
       ) : (
         <p className="font-bold" style={{ textAlign: "center" }}>
-          Checking for an available Carbon Sinks challenge <br /> on Base
-          Goerli chain. Be patient.
+          Checking for an available
+          <br />
+          Carbon Sinks challenge
+          <br />
+          on Base Goerli chain.
+          <br />- Loading -
         </p>
       )}
 

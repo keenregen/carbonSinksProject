@@ -1,0 +1,15 @@
+node_modules/
+dist/
+artifacts/
+
+# Yarn files
+.yarn/install-state.gz
+.yarn/cache
+yarn-error.log
+
+# local env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
